@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Sans-Serif;
+}
+.screen {
+  width: 100%;
+  background: grey;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("../module/hero3.webp");
+  animation: ubahHero 10s infinite reverse;
+  position: fixed;
+  animation-delay: 2s;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+}
+
+.blur:after {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.612);
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.logo {
+  position: relative;
+  top: -41px;
+  text-align: center;
+}
+.logo span {
+  font-size: 14px;
+  color: grey;
+}
+.logo i {
+  color: grey;
+  margin-left: 4px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.info h3 {
+  background-image: linear-gradient(
+    120deg,
+    rgba(0, 98, 209, 0.9757575767627661) 5%,
+    rgba(0, 208, 97, 0.9841897218123726) 99%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.info .fa-youtube {
+  font-size: 20px;
+  margin-right: 8px;
+  background-image: linear-gradient(
+    120deg,
+    rgba(209, 152, 0, 0.9757575767627661) 5%,
+    rgba(255, 47, 0, 0.9673254261846128) 99%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px black;
+  padding: 20px;
+  margin: 30% auto;
+  border-top: 20px solid #ebe3ff;
+  background: #ffffffd0;
+  position: relative;
+  z-index: 9999;
+}
+
+fieldset {
+  border: 2px solid #022e39;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+select {
+  height: 28px;
+  background: #008cff;
+  color: white;
+  border-color: transparent;
+  border-radius: 3px;
+  font-family: "Ubuntu";
+}
+legend p {
+  background-image: linear-gradient(
+    120deg,
+    rgba(209, 152, 0, 0.9757575767627661) 5%,
+    rgba(255, 47, 0, 0.9673254261846128) 99%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+select:focus {
+  outline: none;
+}
+
+input {
+  height: 28px;
+  width: 80%;
+  border: none;
+  padding-left: 4px;
+  margin-right: 3px;
+  border-bottom: 2px solid grey;
+  background: transparent;
+  font-family: "Open Sans";
+}
+
+input:-webkit-autofill {
+  outline: none;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s;
+  -webkit-text-fill-color: black;
+}
+input:focus {
+  outline: none;
+}
+button {
+  margin-top: 4px;
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+  height: 28px;
+  background: #0085ff;
+  color: white;
+  font-size: 10px;
+  font-family: "Ubuntu", Sans-Serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+form h2 {
+  display: inline-block;
+  /*margin-right: 3px;*/
+}
+.lastSvg {
+  margin-bottom: -6px;
+}
+form i {
+  font-size: 15px;
+}
+
+.result {
+  margin-top: 10px;
+}
+
+.result .fa-music {
+  background-image: linear-gradient(
+    120deg,
+    rgba(209, 152, 0, 0.9757575767627661) 5%,
+    rgba(255, 47, 0, 0.9673254261846128) 99%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.result .fa-download {
+  margin-left: 4px;
+}
+
+.result .fa-chevron-left {
+  margin-right: 4px;
+}
+.box-button {
+  display: flex;
+  align-items: center;
+}
+.box-button button {
+  margin-top: 4px;
+  margin-right: 8px;
+}
+.box-button2 .fa-chevron-left {
+  margin: 0;
+}
+.box-button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-button2 button {
+  display: inline-block;
+  line-height: 8px;
+  margin-right: 4px;
+  height: 28px;
+}
+.box-button2 select {
+  height: 29px;
+  position: relative;
+  top: -1px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.alert {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #ffc5c5;
+  color: red;
+  z-index: 9999;
+}
+.alert i {
+  margin-right: 4px;
+}
+.box-button2 #download {
+  margin-top: 8px;
+}
+@keyframes ubahHero {
+  0% {
+    background-image: url("../module/hero3.webp");
+  }
+  25% {
+    background-image: url("../module/hero2.webp");
+  }
+  50% {
+    background-image: url("../module/hero2.webp");
+  }
+  80% {
+    background-image: url("../module/hero.webp");
+  }
+  100% {
+    background-image: url("../module/hero.webp");
+  }
+}

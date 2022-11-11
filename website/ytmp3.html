@@ -1,0 +1,14 @@
+{% extends 'index.html'%}
+{% block result %}
+  <i class="fa-solid fa-music"></i>
+  <span id="result">{{title}}.mp3</span>
+  <div class="box-button">
+  <form action="/mp3" method="post">
+    <button type="submit"><h2>Download<i class="fa-solid fa-download"></i></h2></button>
+  </form>
+  <form action="/">
+    <button type="submit"><i class="fa-sharp fa-solid fa-chevron-left"></i>
+    <h2>Back</h2></button>
+  </form>
+  </div>
+{% endblock %}

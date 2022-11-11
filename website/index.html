@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Converter YouTube - Arif Dev</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='style.css')}}"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.2.0/css/fontawesome.css"
+    />
+  </head>
+  <body>
+    <div class="alert">{% block alert %} {% endblock %}</div>
+    <div class="screen">
+      <div class="blur">
+        <div class="container">
+          <div class="logo">
+            <i class="fa-brands fa-facebook"></i>
+            <span>Ari3fDev</span>
+            <i class="fa-brands fa-github"></i>
+            <span>ariefdev-project</span>
+          </div>
+          <div class="info">
+            <i class="fa-brands fa-youtube"></i>
+            <h3 id="info">{{info}}</h3>
+          </div>
+          <form action="/ytDownload" method="post" accept-charset="utf-8">
+            <fieldset>
+              <legend><p>Enter youtube url</p></legend>
+              <input type="text" name="url" />
+              <select id="choose" name="choose">
+                <option value="ytmp3" id="ytmp3" name="ytmp3">ytmp3</option>
+                <option value="ytmp4" id="ytmp4" name="ytmp4">ytmp4</option>
+              </select>
+            </fieldset>
+            <button type="submit" id="submit">
+              <h2 id="content">Convert</h2>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </form>
+          <div class="result">{% block result %} {% endblock %}</div>
+        </div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          class="lastSvg"
+        >
+          <path
+            fill="white"
+            fill-opacity="1"
+            d="M0,224L48,224C96,224,192,224,288,186.7C384,149,480,75,576,74.7C672,75,768,149,864,149.3C960,149,1056,75,1152,37.3C1248,0,1344,0,1392,0L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <script>
+      const submit = document.querySelector("#submit");
+      const result = document.querySelector("#result");
+      if (result) {
+        submit.remove();
+        if (document.querySelector("#info").textContent == "Youtube to mp4") {
+          document.querySelector("#choose").selectedIndex = 1;
+          document.querySelector("#ytmp3").disabled = true;
+        } else {
+          document.querySelector("#choose").selectedIndex = 0;
+          document.querySelector("#ytmp4").disabled = true;
+        }
+        
+        if (document.querySelector("#itag")) {
+          document.querySelector("#itag").selectedIndex = 2;
+        }
+      }
+      document.querySelector("#choose").addEventListener("change", (event) => {
+        if (document.querySelector("#choose").value == "ytmp3") {
+          document.querySelector("#info").textContent = "Youtube to mp3";
+        } else if (document.querySelector("#choose").value == "ytmp4") {
+          document.querySelector("#info").textContent = "Youtube to mp4";
+        } else {
+          document.querySelector("#info").textContent = "Youtube to mp3"
+        }
+      });
+      
+      if (document.querySelector("#message")) {
+        document.querySelector(".alert").style = 'display: flex;'
+      }
+    </script>
+  </body>
+</html>
